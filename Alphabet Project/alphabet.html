@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
+    <title>Alphabet task</title>
+
+    <style>
+        *{
+            font-family: 'Rubik', sans-serif;
+        }
+        input:focus {
+            outline: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-200 text-white flex justify-center items-center w-3/4 mx-auto h-screen">
+
+    <div class="w-full bg-gray-200 rounded-xl shadow-2xl p-8 m-4">
+        <h1 class="block w-full text-center text-2xl text-gray-600 mb-8">JUNGLE LANGUAGE</h1>
+        <form class="mb-4">
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 uppercase font-bold text-lg text-gray-600" for="last_name">
+                    Enter a Word
+                </label>
+
+                <input class="border rounded py-2 px-3 text-gray-600 font-bold" type="text" id="letter"required>
+            </div>
+
+            <button class="block w-full bg-gray-600 hover:bg-gray-500 text-white uppercase text-lg mx-auto p-4 rounded"
+                type="submit" id="btn">Enter</button>
+        </form>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
