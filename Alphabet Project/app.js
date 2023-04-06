@@ -26,8 +26,6 @@ btn.addEventListener('click', (e) => {
         }
         console.log(str)
     }
-
-    output.innerHTML = (str);
 })
 jungleCode = {
     "a": "1",

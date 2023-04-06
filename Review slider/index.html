@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+           
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 30px;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .hero h1::after {
+            content: '';
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, #f44336, #9f4db5);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hero .review-box {
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .hero .card {
+            height: 300px;
+            padding: 40px;
+            color: #333;
+            line-height: 22px;
+            position: relative;
+            background: #fff;
+            height:300px;
+            box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .hero .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .hero .profile img {
+            width: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .hero .profile h3 {
+            font-size: 25px;
+            color: #f44336;
+            margin-bottom: 10px;
+        }
+
+        .hero #slide {
+            width: 100%;
+            padding-right: 60px;
+          
+        }
+
+        .hero .sidebar {
+            width: 60px;
+            height: 300px;
+            padding: 15px 0;
+            background: #f44336;
+            position: absolute;
+            right: 0;
+            top: 0;
+            right: 0;
+            display: flex; 
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            border-top-right-radius:10px;
+            border-bottom-right-radius:10px;
+        }
+
+        .hero .sidebar img {
+            width: 25px;
+            padding: 5px;
+            border-radius: 50%;
+            background: #fff;
+
+        }
+        .hero .sidebar #slide-up{
+            margin-bottom:25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <h1>Client reviews</h1>
+        <div class="review-box">
+            <div id="slide">
+                <div class="card">
+                    <div class="profile">
+                        <img src="sample-image.jpg" alt="">
+                        <div>
+                            <h3>Prince Effiong</h3>
+                            <p>Javascript developer</p>
+                        </div>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nihil dolores, doloribus rerum
+                        quas placeat dolor aperiam? Architecto et molestiae veritatis molestias nemo corporis nam magni
+                        deserunt eaque, quaerat doloribus. Quia temporibus, possimus necessitatibus maxime porro ad
+                        repellat. Ad, consequuntur.
+                    </p>
+                
+                </div>
+                <div class="sidebar">
+                    <img src="arrow-up.png" alt="" id="slide-up">
+                    <img src="arrow-down.png" alt="" id="slide-down">
+                </div>
+            </div>
+                <div class="card">
+                    <div class="profile">
+                        <img src="sample-image.jpg" alt="">
+                        <div>
+                            <h3>Prince Effiong</h3>
+                            <p>Javascript developer</p>
+                        </div>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nihil dolores, doloribus rerum
+                        quas placeat dolor aperiam? Architecto et molestiae veritatis molestias nemo corporis nam magni
+                        deserunt eaque, quaerat doloribus. Quia temporibus, possimus necessitatibus maxime porro ad
+                        repellat. Ad, consequuntur.
+                    </p>
+                
+                </div>
+                <div class="sidebar">
+                    <img src="arrow-up.png" alt="" id="slide-up">
+                    <img src="arrow-down.png" alt="" id="slide-down">
+                </div>
+            </div>
+               
+        </div>
+    </div> -->
+    <div class="testimonial-slider">
+        <div class="testimonial">
+          <img src="arrow-down.png" alt="Avatar">
+          <p>"This is the first testimonial."</p>
+          <h4>John Doe</h4>
+        </div>
+        <div class="testimonial">
+          <img src="arrow-down.png" alt="Avatar">
+          <p>"This is the second testimonial."</p>
+          <h4>Jane Doe</h4>
+        </div>
+        <div class="testimonial">
+          <img src="arrow-down.png" alt="Avatar">
+          <p>"This is the third testimonial."</p>
+          <h4>Bob Smith</h4>
+        </div>
+      </div>
+      
+</body>
+<style>
+    .testimonial-slider {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.testimonial {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  padding: 20px;
+  text-align: center;
+}
+
+.testimonial img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonial h4 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+</style>
+
+<script>
+    const slider = document.querySelector('.testimonial-slider');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3;
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+</script>
+</html>
